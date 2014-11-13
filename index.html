@@ -49,12 +49,12 @@ var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
 
 // 10 is half the size of the ball
-var stepSize = 10;
+var stepSize = ball.clientWidth/2;
 
 var maxX = garden.clientWidth  - ball.clientWidth;
 var maxY = garden.clientHeight - ball.clientHeight;
 
-
+console.log(stepSize); 
 var x = 90,
     y = 90;
 
@@ -126,6 +126,10 @@ function handleOrientation(event) {
   ball.style.top  = (maxX*x/180 - 10) + "px";
   ball.style.left = (maxY*y/180 - 10) + "px";
 }
+
+
+window.addEventListener('deviceorientation', handleOrientation);
+
 
 
 </script>
